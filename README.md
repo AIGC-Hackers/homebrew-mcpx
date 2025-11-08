@@ -6,13 +6,13 @@ Extended TypeScript runtime and CLI for Model Context Protocol with batch operat
 
 ```bash
 # Add the tap
-brew tap ethan-huo/mcpx
+brew tap AIGC-Hackers/mcpx
 
 # Install mcpx
 brew install mcpx
 
 # Or install in one command
-brew install ethan-huo/mcpx/mcpx
+brew install AIGC-Hackers/mcpx/mcpx
 ```
 
 ## Usage
@@ -57,9 +57,9 @@ brew upgrade mcpx
 
 ## Links
 
-- [GitHub Repository](https://github.com/ethan-huo/mcpx)
-- [Releases](https://github.com/ethan-huo/mcpx/releases)
+- [GitHub Repository](https://github.com/AIGC-Hackers/mcpx)
+- [Releases](https://github.com/AIGC-Hackers/mcpx/releases)
 
 ## Maintainer
 
-[@ethan-huo](https://github.com/ethan-huo)
+[@AIGC-Hackers](https://github.com/AIGC-Hackers)

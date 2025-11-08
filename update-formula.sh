@@ -14,10 +14,10 @@ echo "Downloading binaries for v$VERSION..."
 mkdir -p /tmp/mcpx-downloads
 cd /tmp/mcpx-downloads
 
-curl -sL "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-darwin-arm64" -o mcpx-darwin-arm64
-curl -sL "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-darwin-x64" -o mcpx-darwin-x64
-curl -sL "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-linux-arm64" -o mcpx-linux-arm64
-curl -sL "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-linux-x64" -o mcpx-linux-x64
+curl -sL "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-darwin-arm64" -o mcpx-darwin-arm64
+curl -sL "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-darwin-x64" -o mcpx-darwin-x64
+curl -sL "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-linux-arm64" -o mcpx-linux-arm64
+curl -sL "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-linux-x64" -o mcpx-linux-x64
 
 echo "Calculating SHA256 checksums..."
 
@@ -39,26 +39,26 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cat > "$SCRIPT_DIR/Formula/mcpx.rb" << EOF
 class Mcpx < Formula
   desc "Extended TypeScript runtime and CLI for Model Context Protocol"
-  homepage "https://github.com/ethan-huo/mcpx"
+  homepage "https://github.com/AIGC-Hackers/mcpx"
   version "$VERSION"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-darwin-arm64"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-darwin-arm64"
       sha256 "$DARWIN_ARM64_SHA"
     else
-      url "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-darwin-x64"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-darwin-x64"
       sha256 "$DARWIN_X64_SHA"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-linux-arm64"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-linux-arm64"
       sha256 "$LINUX_ARM64_SHA"
     else
-      url "https://github.com/ethan-huo/mcpx/releases/download/v$VERSION/mcpx-linux-x64"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v$VERSION/mcpx-linux-x64"
       sha256 "$LINUX_X64_SHA"
     end
   end
