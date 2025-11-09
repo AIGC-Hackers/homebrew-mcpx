@@ -6,16 +6,16 @@ class Mcpx < Formula
 
   on_macos do
     url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.5.0/mcpx-darwin-arm64"
-    sha256 "2f18c3d6ac51c728d9011306d4d206265b9aac7a4e5eaa3de9127c4dc910249d"
+    sha256 "13310aa8f07ab04699a485783eaebe79a2601e66d5ee83f334f45630d3c96fae"
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.5.0/mcpx-linux-arm64"
-      sha256 "92855753a227164f5e6114255f2e8903a89defe67b9d1970e66434433e308de9"
+      sha256 "fd5cf443a4d3837d81729479a6624ccaf04c7023f5b0663ca98acadf5bfffccb"
     else
       url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.5.0/mcpx-linux-x64"
-      sha256 "d640df917a7a2d1a7cd9925dd9d3c16f8c2432ca8aa9215b1e89003141fae275"
+      sha256 "d4f994b76f8c190c79cbb21bb061253cffd4a4404126eeba8bd85b12a4694e0f"
     end
   end
 
