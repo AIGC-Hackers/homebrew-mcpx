@@ -4,21 +4,21 @@
 class Mcpx < Formula
   desc "Extended TypeScript runtime and CLI for Model Context Protocol"
   homepage "https://github.com/AIGC-Hackers/mcpx"
-  version "0.5.1"
+  version "0.6.0"
   license "MIT"
 
   on_macos do
-    url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.5.1/mcpx-darwin-arm64"
-    sha256 "480c0a62e3a4acec9920d87e65041c7a88b65c8dd821db56d0bf97463184082b"
+    url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.6.0/mcpx-darwin-arm64"
+    sha256 "d86405d6c224528ecff0b7163b26a763605e2fbe75f583941f1295e5669156a7"
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.5.1/mcpx-linux-arm64"
-      sha256 "e1864290df0db9ec58ec9f64aca7028c7c5602e787432d7cf623ae6da7a1216e"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.6.0/mcpx-linux-arm64"
+      sha256 "f4f824f0b00b23d79ba1e2104d1dc3111ec5d2a44fccbff4b4469f319907b970"
     else
-      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.5.1/mcpx-linux-x64"
-      sha256 "2dacb1cf307507e5178ee3e73820e6e56b712100ca4f5fd793df7dd4e6f662be"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.6.0/mcpx-linux-x64"
+      sha256 "6a33f829c8582ba85b913e82b240dcb53a9d668c776fc1d5d07e25fa4c5b8741"
     end
   end
 
