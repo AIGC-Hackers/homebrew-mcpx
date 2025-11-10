@@ -22,13 +22,28 @@ class Mcpx < Formula
     end
   end
 
+  resource "zsh-completion" do
+    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.0/completions/_mcpx"
+    sha256 "b9c1102919165d7552a9b0f9f3b0d3f7e17359c6ba2bf345cb20e0380bf1e2ac"
+  end
+
+  resource "bash-completion" do
+    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.0/completions/mcpx.bash"
+    sha256 "ecbad2f2c5e3ce98b68b6dcab360e86bf822fbb4c874e3e04a4801794c7db758"
+  end
+
+  resource "fish-completion" do
+    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.0/completions/mcpx.fish"
+    sha256 "87016a7851870b1e2569ae439a3c4925110405ce94bd5752a4725963c70f1fd4"
+  end
+
   def install
     bin.install Dir["mcpx-*"].first => "mcpx"
 
     # Install shell completions
-    zsh_completion.install "_mcpx"
-    bash_completion.install "mcpx.bash" => "mcpx"
-    fish_completion.install "mcpx.fish"
+    resource("zsh-completion").stage { zsh_completion.install "_mcpx" }
+    resource("bash-completion").stage { bash_completion.install "mcpx.bash" => "mcpx" }
+    resource("fish-completion").stage { fish_completion.install "mcpx.fish" }
   end
 
   test do
