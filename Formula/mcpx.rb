@@ -4,37 +4,37 @@
 class Mcpx < Formula
   desc "Extended TypeScript runtime and CLI for Model Context Protocol"
   homepage "https://github.com/AIGC-Hackers/mcpx"
-  version "0.7.0"
+  version "0.7.1"
   license "MIT"
 
   on_macos do
-    url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.0/mcpx-darwin-arm64"
-    sha256 "ac5dc8648dfd0b390f559f8f8e40b1959debd759fe17cf3ba3ae7825133e70fd"
+    url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.1/mcpx-darwin-arm64"
+    sha256 "a7534b02ebe507406e88296ba2d87324c2e310c96a11cfa96e5992bba875e512"
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.0/mcpx-linux-arm64"
-      sha256 "7fa57f68389d11e9730130c3eab84be561261fde8c876f12787b67f1d5dcea90"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.1/mcpx-linux-arm64"
+      sha256 "cc3a24be232fa61264c69a22e8fb48d943aeb1a31278638269d0c9c183c5f690"
     else
-      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.0/mcpx-linux-x64"
-      sha256 "0dac68854d4333e9bf5644d29e0837b216516a37ae94245fbf04e6943bd364ea"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.1/mcpx-linux-x64"
+      sha256 "9a3fa660a61835f2f662088768f0ae18ecc3d79bf6c9c85994b717c4978f8ad5"
     end
   end
 
   resource "zsh-completion" do
-    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.0/completions/_mcpx"
-    sha256 "b9c1102919165d7552a9b0f9f3b0d3f7e17359c6ba2bf345cb20e0380bf1e2ac"
+    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.1/completions/_mcpx"
+    sha256 "f1cf28e1b6b7ef6b18bba7f435bf1758d3f5826dcb365be505916c71a0985384"
   end
 
   resource "bash-completion" do
-    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.0/completions/mcpx.bash"
+    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.1/completions/mcpx.bash"
     sha256 "ecbad2f2c5e3ce98b68b6dcab360e86bf822fbb4c874e3e04a4801794c7db758"
   end
 
   resource "fish-completion" do
-    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.0/completions/mcpx.fish"
-    sha256 "87016a7851870b1e2569ae439a3c4925110405ce94bd5752a4725963c70f1fd4"
+    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.1/completions/mcpx.fish"
+    sha256 "2885712567ff05f734bd583b780c0350c0a0d194d226c24d13cea8e4426b2cf6"
   end
 
   def install
