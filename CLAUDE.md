@@ -16,7 +16,8 @@ The correct workflow is:
 
 1. **Release in main repo**: Push a version tag to `AIGC-Hackers/mcpx` (e.g., `git tag v0.5.0 && git push origin v0.5.0`)
 2. **Automatic build**: The [release.yml](https://github.com/AIGC-Hackers/mcpx/blob/main/.github/workflows/release.yml) workflow in the main repo:
-   - Builds binaries for all platforms (darwin-arm64, linux-arm64, linux-x64)
+   - Builds tar.gz packages for all platforms (darwin-arm64, linux-arm64, linux-x64)
+   - Each package includes the binary and shell completions (zsh, bash, fish)
    - Creates a GitHub Release with all artifacts
 3. **Automatic formula update**: The [update-homebrew.yml](https://github.com/AIGC-Hackers/mcpx/blob/main/.github/workflows/update-homebrew.yml) workflow:
    - Triggers on release publication OR manual dispatch
@@ -138,12 +139,12 @@ The update-homebrew.yml workflow in the main repo has permissions to push to thi
 
 If CI is completely broken and you need to update manually:
 
-1. **Download binaries** from the GitHub Release
+1. **Download tar.gz packages** from the GitHub Release
 2. **Calculate SHA256** for all platforms:
    ```bash
-   shasum -a 256 mcpx-darwin-arm64
-   shasum -a 256 mcpx-linux-arm64
-   shasum -a 256 mcpx-linux-x64
+   shasum -a 256 mcpx-darwin-arm64.tar.gz
+   shasum -a 256 mcpx-linux-arm64.tar.gz
+   shasum -a 256 mcpx-linux-x64.tar.gz
    ```
 3. **Run update script**:
    ```bash
