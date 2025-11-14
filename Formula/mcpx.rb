@@ -8,42 +8,25 @@ class Mcpx < Formula
   license "MIT"
 
   on_macos do
-    url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.2/mcpx-darwin-arm64"
-    sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+    url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.2/mcpx-darwin-arm64.tar.gz"
+    sha256 "9c58893958c5ebf01366931ee33a695afad5a4ebad34d07455e5d879c2a3ea04"
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.2/mcpx-linux-arm64"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.2/mcpx-linux-arm64.tar.gz"
+      sha256 "a6c4c930d4a5980ec1059cec034df2c11df7313fb90a2b49d8259754af55e5b5"
     else
-      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.2/mcpx-linux-x64"
-      sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+      url "https://github.com/AIGC-Hackers/mcpx/releases/download/v0.7.2/mcpx-linux-x64.tar.gz"
+      sha256 "3f3285484700d9d583acea91ff6f9d1fb44a5d95184a370cd0b070dbd4718e4b"
     end
   end
 
-  resource "zsh-completion" do
-    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.2/completions/_mcpx"
-    sha256 "f1cf28e1b6b7ef6b18bba7f435bf1758d3f5826dcb365be505916c71a0985384"
-  end
-
-  resource "bash-completion" do
-    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.2/completions/mcpx.bash"
-    sha256 "ecbad2f2c5e3ce98b68b6dcab360e86bf822fbb4c874e3e04a4801794c7db758"
-  end
-
-  resource "fish-completion" do
-    url "https://raw.githubusercontent.com/AIGC-Hackers/mcpx/v0.7.2/completions/mcpx.fish"
-    sha256 "2885712567ff05f734bd583b780c0350c0a0d194d226c24d13cea8e4426b2cf6"
-  end
-
   def install
-    bin.install Dir["mcpx-*"].first => "mcpx"
-
-    # Install shell completions
-    resource("zsh-completion").stage { zsh_completion.install "_mcpx" }
-    resource("bash-completion").stage { bash_completion.install "mcpx.bash" => "mcpx" }
-    resource("fish-completion").stage { fish_completion.install "mcpx.fish" }
+    bin.install "mcpx"
+    zsh_completion.install "completions/_mcpx"
+    bash_completion.install "completions/mcpx.bash" => "mcpx"
+    fish_completion.install "completions/mcpx.fish"
   end
 
   test do
